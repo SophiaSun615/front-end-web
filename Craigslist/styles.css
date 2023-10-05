@@ -14,6 +14,12 @@ header {
   padding: 23px;
   align-items: center;
 }
+@media screen and (max-width: 1160px) {
+  header{
+    background-color: white;
+    color: #7b888f;
+    }
+}
 
 .header-left {
   margin-left: 100px;
@@ -49,14 +55,29 @@ main {
   padding: 8px;
   padding-left: 50px;
   padding-right: 50px;
-  margin: 30px;
   font-size: 20px;
   background-color: #7b888f;
   color: white;
   display: inline-block;
   border-radius: 40px;
   position: relative;
-  left: 810px;
+  left: 45%;
+}
+
+@media screen and (max-width: 1640px) {
+  .browser{
+    font-size: 16px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media screen and (max-width: 1160px) {
+  .browser{
+    font-size: 13px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 .main-menu {
@@ -65,6 +86,8 @@ main {
   color: #7b888f;
   margin-top: 10px;
   margin-bottom: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .menu-item {
@@ -93,6 +116,10 @@ main {
   background-color: #f0f0f0;
   margin-right: 80px;
   margin-bottom: 100px;
+}
+
+.item:hover {
+  background-color: #7b888f;
 }
 
 .item p {
