@@ -1,0 +1,21 @@
+body{
+  text-align: center;
+}
+
+ul{
+      display: inline;
+      margin-left: 0px;
+    }
+
+#myImage {
+  width: 200px;
+  height: auto;
+}
+
+#comments {
+  margin-top: 20px;
+}
+
+#commentInput {
+  margin-bottom: 10px;
+}
