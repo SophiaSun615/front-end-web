@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - PlogLife</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+  <script src="https://kit.fontawesome.com/00c761c639.js" crossorigin="anonymous"></script>
+  <script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+  <title>Your Plog Life</title>
+</head>
+
+<body>
+  <header>
+    <div class="header-left">
+      <div class="logo">Ploglife</div>
+    </div>
+    <div class="header-center">
+      <a>About</a>
+      <a>Recommend</a>
+      <a>Explore</a>
+      <a>Upload</a>
+    </div>
+    <div class="header-right">
+      <a><b>Login</b></a>
+      <button><b>Get Started</b></button>
+    </div>
+    <div class="dropdown">
+      <span><img src="https://flaticons.net/icon.php?slug_category=application&slug_icon=user-login"></span>
+      <div class="dropdown-content">
+        <p>Login</p>
+        <p>Signup</p>
+      </div>
+    </div>
+  </header>
+  <div class="main-content">
+    <div class="info">
+      <div class="left-text">
+        <h1>We will help you to remember meaningful moments</h1>
+      </div>
+      <div class="right-text">
+        <p>In a <w>world</w> filled with vivid colors and boundless opportunities, embrace every <w>moment</w> as a stroke of life's vibrant canvas. <w>Life</w> is your canvas, make it a work of art.</p>
+        <p>
+        <div class="inspiration" id="inspirationResult" onclick="fetchInspiration(proxyUrl)">
+          <span>Find inspiration ————></span>
+        </div>
+
+        </p>
+      </div>
+    </div>
+    <div class="bottom-text">
+      <p>Today’s Top Plog</p>
+    </div>
+  </div>
+  <div class="half-black">
+    <div class="square-grid">
+      <div class="square3">
+        <div class="react-3">
+          <div id="root1"></div>
+        </div>
+        <img src="https://i.pinimg.com/564x/0d/ca/d0/0dcad0aab0fbf63b65e9b5ed3a303634.jpg">
+      </div>
+      <div class="square3">
+        <div class="react-3">
+          <div id="root2"></div>
+        </div>
+        <img src="https://i.pinimg.com/564x/4d/69/43/4d69433060300dd761f5d823465474cb.jpg">
+      </div>
+      <div class="square3">
+        <div class="react-3">
+          <div id="root3"></div>
+        </div>
+        <img src="https://i.pinimg.com/564x/1f/af/fa/1faffa6eeff539a9ca13b4d9af4c4018.jpg">
+      </div>
+    </div>
+    <script type="text/jsx">
+      class HeartButton extends React.Component {
+      state = {
+        likes: 0,
+        stars: 0
+      };
+
+      addLike = () => {
+        let newCount = this.state.likes + 1;
+        this.setState({
+          likes: newCount
+        });
+      };
+
+      addStar = () => {
+        let newCount = this.state.stars + 1;
+        this.setState({
+          stars: newCount
+        });
+      };
+
+      render() {
+        const likes = this.state.likes;
+        const stars = this.state.stars;
+        return (
+          <div>
+            <button className="button3" onClick={this.addLike}>
+              <i className={`fas fa-heart fa-lg ${likes > 0 ? 'active' : ''}`} style={{ color: likes > 0 ? 'red' : '#33c3f0' }}></i>
+              {likes > 0 && <span>{likes}</span>}
+            </button>
+            <button className="button3" onClick={this.addStar}>
+              <i className={`fas fa-star fa-lg ${stars > 0 ? 'active' : ''}`} style={{ color: stars > 0 ? 'gold' : 'gray', marginLeft: '5px' }}></i>
+              {stars > 0 && <span>{stars}</span>}
+            </button>
+          </div>
+        );
+      }
+    }
+    ReactDOM.render(<HeartButton />, document.getElementById('root1'));
+    ReactDOM.render(<HeartButton />, document.getElementById('root2'));
+    ReactDOM.render(<HeartButton />, document.getElementById('root3'));
+  </script>
+  </div>
+
+  <div class="main-container">
+    <div class="top-topic">
+      <div class="left-topic">
+        <div class="yellow">
+          <a data-topic="Minimalism">・Minimalism: What benefit minimalism brings to me</a>
+        </div>
+        <a data-topic="Work-Life Balance">・Work-Life Balance: Is remote work a kind of new trend?</a>
+      </div>
+      <div class="right-topic">
+        <a data-topic="Information Age">・The impact of the fragmented info age on people</a>
+        <a data-topic="Dinner">・How to make a quick and nutritious dinner after work</a>
+      </div>
+    </div>
+
+    <div class="top-discuss">
+      <div class="left-discuss">
+        <div class="left-square">
+          <img src="https://trendenser.se/wp-content/uploads/2019/05/nyhetsbrev_59256dfe2a6b2250a22b3d9a.jpg" alt="mini">
+        </div>
+      </div>
+      <div class="right-discuss">
+        <h2>What benefit minimalism brings to people</h2>
+        <p>A minimalist lifestyle can reduce the stress associated with consumerism and the constant pursuit of material possessions. It promotes contentment with what one has rather than constantly seeking more.
+        </p>
+        <div class="square-button">
+          <button>See more...</button>
+        </div>
+      </div>
+    </div>
+    <div class="explore">
+      <h2>Explore others colorful plog </h2>
+      <p>Looking at the lives of others, achieving a certain degree of self consistency, improving one's own cognition, and following one's own ideas.
+    </div>
+    <div class="nine-squares" id="photoGrid">
+
+    </div>
+    <div class="view-more-button">
+      <button id="viewMoreBtn">View more...</button>
+    </div>
+  </div>
+  <div class="upload">
+    <h2>Upload Your Plog</h2>
+    <div class="upload-squares">
+      <div class="plus">
+        <img src="https://simpleicon.com/wp-content/uploads/cloud-upload-1.png">
+      </div>
+      <div class="square6" id="square1">
+        <canvas class="upload-canvas" id="canv1"></canvas>
+        <input type="file" multiple="false" accept="image/*" onchange="upload(1)">
+      </div>
+      <div class="square6" id="square2">
+        <canvas class="upload-canvas" id="canv2"></canvas>
+        <input type="file" multiple="false" accept="image/*" onchange="upload(2)">
+      </div>
+      <div class="square6" id="square3">
+        <canvas class="upload-canvas" id="canv3"></canvas>
+        <input type="file" multiple="false" accept="image/*" onchange="upload(3)">
+      </div>
+      <div class="square6" id="square4">
+        <canvas class="upload-canvas" id="canv4"></canvas>
+        <input type="file" multiple="false" accept="image/*" onchange="upload(4)">
+      </div>
+      <div class="square6" id="square5">
+        <canvas class="upload-canvas" id="canv5"></canvas>
+        <input type="file" multiple="false" accept="image/*" onchange="upload(5)">
+      </div>
+      <div class="square6" id="square6">
+        <canvas class="upload-canvas" id="canv6"></canvas>
+        <input type="file" multiple="false" accept="image/*" onchange="upload(6)">
+      </div>
+    </div>
+
+    <div class="textbox_border">
+      <div class="textbox" contenteditable="true">
+        Write something here...
+      </div>
+    </div>
+    <div class="upload-button" id="uploadBtnContainer">
+      <button id="uploadBtn">Upload</button>
+    </div>
+  </div>
+  <div id="title" class="title" style="display: none;"><b>Your Upload Goes Here...</b></div>
+  <div id="imageContainer" style="display: none;"></div>
+  <div id="textContainer" style="display: none;"></div>
+
+  </div>
+  </div>
+  </div>
+  <footer>
+    <p>&copy; PlogLife</p>
+  </footer>
+</body>
+
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
